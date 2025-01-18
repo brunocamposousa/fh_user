@@ -38,7 +38,7 @@ public class UserController {
             
             if (success) {
                 response.put("message", "Usuário registrado com sucesso!");
-                return ResponseEntity.ok(response);
+                return ResponseEntity.status(HttpStatus.CREATED).body(response);
             } else {
                 response.put("message", "Erro ao registrar usuário");
                 return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);
